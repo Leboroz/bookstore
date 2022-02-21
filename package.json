@@ -1,0 +1,25 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leboroz/bookstore.git"
+  },
+  "keywords": [
+    "react",
+    "sass",
+    "leboroz",
+    "bookstore"
+  ],
+  "author": "Leonardo Albornoz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leboroz/bookstore/issues"
+  },
+  "homepage": "https://github.com/Leboroz/bookstore#readme"
+}
