@@ -1,0 +1,19 @@
+@use '../../index.scss';
+.header {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  gap: 2rem;
+  padding-block: 2rem;
+
+  .navbar {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+
+    .link {
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
