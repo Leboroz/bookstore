@@ -28,7 +28,7 @@ const List = () => {
     <ul className={list}>
       {books.map((book) => (
         <li key={book.title}>
-          <Book props={book}></Book>
+          <Book props={book} />
         </li>
       ))}
     </ul>
