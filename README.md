@@ -1,43 +1,56 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Bookstore
 
-> Description the project.
+> This is a web App that displays a list of books and fetches an API. Built with React, Redux, Typescript, SASS.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript
+- React
+- Redux
+- SASS
 
-## Live Demo (if available)
+## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+Live Demo Link
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
 
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
+- git
+- node
+
 ### Setup
+
+open a terminal and dc to the desired directory and run
+
+```bash
+$ git clone https://github.com/Leboroz/bookstore.git
+
+$ cd bookstore
+```
 
 ### Install
 
+`run`
+
+```bash
+$ npm install
+```
+
+This will install all the dependencies required to run, test, and build the application.
+
 ### Usage
 
-### Run tests
+`run`
 
-### Deployment
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
+```bash
+$ npm start
+```
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -45,12 +58,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
-### `npm test`
+### Run tests
+
+`run`
+
+```bash
+$ npm test
+```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Deployment
+
+`run`
+
+```bash
+$ npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -58,7 +83,7 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information
 
 ### `npm run eject`
 
@@ -72,33 +97,21 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Authors
 
-👤 **Author1**
+👤 **Leonardo Albornoz**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- **GitHub**: [@Leboroz](https://github.com/leboroz)
+- **Twitter**: [@Leboroz](https://twitter.com/leboroz)
+- **LinkedIn**: [Leonardo Albornoz](https://www.linkedin.com/in/leonardo-albornoz-216784198/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/leboroz/bookstore/issues/).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
