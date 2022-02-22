@@ -13,7 +13,7 @@
 
 ## Live Demo
 
-Live Demo Link
+[Live Demo Link](https://bookstore-leboroz.herokuapp.com/)
 
 ## Getting Started
 
