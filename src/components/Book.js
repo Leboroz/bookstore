@@ -1,13 +1,25 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import styles from '../sass/components/book.module.scss';
+import { removeBook } from '../redux/books/books';
 
 const Book = ({ props }) => {
+  const dispatch = useDispatch();
   const {
-    chapter, genre, author, title,
+    chapter, genre, author, title, id,
   } = props;
   const {
     book, header, progress, update, bookHeaderMenu, menuItem,
   } = styles;
+
+  const removeBookFromStore = () => {
+    const selectedBook = {
+      id,
+    };
+
+    // dispatch an action and pass it the newBook object (your action's payload)
+    dispatch(removeBook(selectedBook));
+  };
 
   return (
     <article className={book}>
@@ -26,7 +38,7 @@ const Book = ({ props }) => {
             </button>
           </li>
           <li className={menuItem}>
-            <button type="button" href="#">
+            <button onClick={removeBookFromStore} type="button" href="#">
               Remove
             </button>
           </li>
@@ -48,11 +60,12 @@ const Book = ({ props }) => {
 };
 
 Book.propTypes = {
-  props: {}.isRequired,
+  props: PropTypes.objectOf(PropTypes.object).isRequired,
   chapter: PropTypes.string.isRequired,
   genre: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default Book;
