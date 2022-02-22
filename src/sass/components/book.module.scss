@@ -1,0 +1,30 @@
+.book {
+  display: flex;
+  background-color: #fff;
+  border-radius: 5px;
+  align-items: center;
+  padding: 2rem;
+
+  .header {
+    flex: 2;
+
+    .bookHeaderMenu {
+      display: flex;
+      list-style: none;
+      padding: 0;
+      gap: 2rem;
+
+      .menuItem {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .progress {
+    flex: 1;
+  }
+
+  .update {
+    flex: 1;
+  }
+}
