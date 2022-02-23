@@ -5,8 +5,10 @@ import { removeBook } from '../redux/books/books';
 
 const Book = ({ props }) => {
   const dispatch = useDispatch();
-  const { chapter, genre, author, title, id } = props;
-  const { book, header, progress, update, bookHeaderMenu, menuItem } = styles;
+  const [id, [{ category, title }]] = props;
+  const {
+    book, header, progress, update, bookHeaderMenu, menuItem,
+  } = styles;
 
   const removeBookFromStore = () => {
     const selectedBook = {
@@ -21,10 +23,10 @@ const Book = ({ props }) => {
     <article className={book}>
       <div className={header}>
         <header>
-          <h3>{genre}</h3>
+          <h3>{category}</h3>
           <h2>{title}</h2>
           <button type="button" href="#">
-            {author}
+            author
           </button>
         </header>
         <ul className={bookHeaderMenu}>
@@ -48,7 +50,7 @@ const Book = ({ props }) => {
       <div className={progress}>progress</div>
       <div className={update}>
         <h3>CURRENT CHAPTER</h3>
-        <p>{chapter}</p>
+        <p>chapter</p>
         <button type="button">UPDATE PROGRESS</button>
       </div>
     </article>
@@ -56,12 +58,7 @@ const Book = ({ props }) => {
 };
 
 Book.propTypes = {
-  props: PropTypes.objectOf(PropTypes.object).isRequired,
-  chapter: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
+  props: PropTypes.objectOf(PropTypes.arrays).isRequired,
 };
 
 export default Book;

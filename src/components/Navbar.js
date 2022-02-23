@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import styles from '../sass/components/navbar.module.scss';
 
 const Navbar = () => {
-  const { header, navbar, link, paddingX } = styles;
+  const {
+    header, navbar, link, paddingX,
+  } = styles;
   return (
     <header className={`${header} ${paddingX}`}>
       <span>Bookstore CMS</span>

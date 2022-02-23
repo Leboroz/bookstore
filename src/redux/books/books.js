@@ -7,14 +7,17 @@ const GET_BOOKS = 'GET_BOOKS';
 const initialState = [];
 
 export const addBook = (payload) => async (dispatch) => {
-  const newNote = await BookAPI.se;
-  dispatch({ type: ADD_BOOK, payload });
+  BookAPI.setBook(payload).then(() => {
+    const { id, title, category } = payload;
+    dispatch({ type: ADD_BOOK, payload: [id, [{ title, category }]] });
+  });
 };
 
-export const removeBook = () => async (dispatch) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
+export const removeBook = (payload) => async (dispatch) => {
+  BookAPI.deleteBook(payload.id).then(() => {
+    dispatch({ type: REMOVE_BOOK, payload });
+  });
+};
 
 export const initBooks = () => async (dispatch) => {
   const books = await BookAPI.getBooks();
@@ -26,7 +29,7 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return [...state.filter((book) => book.id !== action.payload.id)];
+      return [...state.filter((book) => book[0] !== action.payload.id)];
     case GET_BOOKS:
       return [...Object.entries(action.payload)];
 
