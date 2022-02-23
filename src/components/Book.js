@@ -5,12 +5,8 @@ import { removeBook } from '../redux/books/books';
 
 const Book = ({ props }) => {
   const dispatch = useDispatch();
-  const {
-    chapter, genre, author, title, id,
-  } = props;
-  const {
-    book, header, progress, update, bookHeaderMenu, menuItem,
-  } = styles;
+  const { chapter, genre, author, title, id } = props;
+  const { book, header, progress, update, bookHeaderMenu, menuItem } = styles;
 
   const removeBookFromStore = () => {
     const selectedBook = {
