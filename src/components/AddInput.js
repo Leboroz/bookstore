@@ -14,13 +14,14 @@ const AddInput = () => {
     const newBook = {
       id: uuidv4(), // make sure it's unique
       title,
-      author: 'lol',
       category,
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
     dispatch(addBook(newBook));
+    e.target.reset();
   };
+
   return (
     <div>
       <h2>ADD NEW BOOK</h2>
