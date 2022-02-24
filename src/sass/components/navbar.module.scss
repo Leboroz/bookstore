@@ -1,4 +1,4 @@
-@use '../../index.scss';
+@use '../../index.scss' as *;
 
 .header {
   display: flex;
@@ -6,6 +6,10 @@
   background-color: #fff;
   gap: 2rem;
   padding-block: 2rem;
+
+  &Title {
+    color: $primary;
+  }
 
   .navbar {
     display: flex;
@@ -15,6 +19,14 @@
     .link {
       text-decoration: none;
       color: #000;
+      font-weight: 300;
+      letter-spacing: 2px;
+      opacity: 0.7;
+
+      &.active {
+        opacity: 1;
+        font-weight: 400;
+      }
     }
   }
 }

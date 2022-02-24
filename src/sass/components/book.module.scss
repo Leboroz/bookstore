@@ -1,9 +1,18 @@
+@use '../../index.scss' as *;
+
 .book {
   display: flex;
+  flex-direction: column;
   background-color: #fff;
   border-radius: 5px;
   align-items: center;
   padding: 2rem;
+  gap: 3rem;
+
+  @include breakpoint-up(lg) {
+    flex-direction: row;
+    gap: 10%;
+  }
 
   .header {
     flex: 2;
@@ -12,7 +21,11 @@
       display: flex;
       list-style: none;
       padding: 0;
-      gap: 2rem;
+      gap: 0.5rem;
+
+      @include breakpoint-up(lg) {
+        gap: 2rem;
+      }
 
       .menuItem {
         background-color: transparent;

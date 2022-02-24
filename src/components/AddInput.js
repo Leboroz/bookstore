@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
+import styles from '../sass/components/add-input.module.scss';
 
 const AddInput = () => {
   const dispatch = useDispatch();
@@ -21,32 +22,73 @@ const AddInput = () => {
     dispatch(addBook(newBook));
     e.target.reset();
   };
+  const {
+    form, formHeader, formInput, btn, titleInput,
+  } = styles;
+  const listOfCategories = [
+    'Fantasy',
+    'Fiction',
+    'Dystopian',
+    'Adventure',
+    'Romance',
+    'Detective & Mystery',
+    'Horror',
+    'Thriller',
+    'Fiction',
+    'Fiction',
+    'Memoir & Autobiography',
+    'Biography',
+    'Cooking',
+    'Art & Photography',
+    'Motivational / Inspirational',
+    'Health & Fitness',
+    'History',
+    'Hobbies & Home',
+    'Families & Relationships',
+    'Humor & Entertainment',
+    'Business & Money',
+    'Law & Criminology',
+    'Sciences',
+    'Religion & Spirituality',
+    'Education & Teaching',
+    'Travel',
+    'Crime',
+  ];
 
   return (
-    <div>
-      <h2>ADD NEW BOOK</h2>
-      <form onSubmit={submitBookToStore} action="">
-        <label htmlFor="title">
+    <div style={{ width: '100%', marginBottom: '100px' }}>
+      <hr style={{ borderColor: 'rgb(0 0 0 / 0.1)' }} />
+      <h2 className={formHeader}>ADD NEW BOOK</h2>
+      <form className={form} onSubmit={submitBookToStore} action="">
+        <label style={{ flex: 2 }} htmlFor="title">
           <input
             onChange={(e) => setTitle(e.target.value)}
             id="title"
             type="text"
             placeholder="Book title"
             value={title}
+            className={`${formInput} ${titleInput}`}
             required
           />
         </label>
-        <label htmlFor="category">
-          <input
+        <label style={{ flex: 1 }} htmlFor="category">
+          <select
             onChange={(e) => setCategory(e.target.value)}
             id="category"
             type="text"
             placeholder="Category"
             value={category}
+            className={formInput}
             required
-          />
+          >
+            {listOfCategories.map((category) => (
+              <option key={category}>{category}</option>
+            ))}
+          </select>
         </label>
-        <button type="submit">ADD BOOK</button>
+        <button className={btn} type="submit">
+          ADD BOOK
+        </button>
       </form>
     </div>
   );
