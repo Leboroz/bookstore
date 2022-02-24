@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 node_modules
-=======
 # Logs
 logs
 *.log
@@ -39,6 +37,7 @@ bower_components
 
 # Compiled binary addons (https://nodejs.org/api/addons.html)
 build/Release
+build/
 
 # Dependency directories
 node_modules/
@@ -128,4 +127,3 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
->>>>>>> b5e11a60573851cd31fbd02d1baf1fbbbe87b65f
