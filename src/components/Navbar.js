@@ -3,15 +3,15 @@ import styles from '../sass/components/navbar.module.scss';
 
 const Navbar = () => {
   const {
-    header, navbar, link, paddingX,
+    header, headerTitle, navbar, link, paddingX, active,
   } = styles;
   return (
     <header className={`${header} ${paddingX}`}>
-      <span>Bookstore CMS</span>
+      <h1 className={headerTitle}>Bookstore CMS</h1>
       <nav>
         <ul className={navbar}>
           <li>
-            <Link className={link} to="/">
+            <Link className={`${link} ${active}`} to="/">
               BOOKS
             </Link>
           </li>
