@@ -10,13 +10,19 @@ export default class BookAPI {
     return fetch(this.URL + this.ID + this.BOOKS).then((res) => res.json());
   }
 
-  static setBook({ id, title, category }) {
+  static setBook(book) {
     return fetch(this.URL + this.ID + this.BOOKS, {
       method: 'POST',
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
-      body: JSON.stringify({ item_id: id, title, category }),
+      body: JSON.stringify(book),
+    });
+  }
+
+  static update({ id, category, title }) {
+    return this.deleteBook(id).then(() => {
+      this.setBook({ item_id: id, category, title });
     });
   }
 

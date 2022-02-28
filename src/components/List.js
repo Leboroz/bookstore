@@ -17,7 +17,7 @@ const List = () => {
     <ul className={list}>
       {state.booksReducer
         && state.booksReducer.map((book) => (
-          <li key={book[0]}>
+          <li key={book[0][0]}>
             <Book props={book} />
           </li>
         ))}

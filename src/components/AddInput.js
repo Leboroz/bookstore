@@ -7,15 +7,16 @@ import styles from '../sass/components/add-input.module.scss';
 const AddInput = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('Fantasy');
 
   const submitBookToStore = (e) => {
     e.preventDefault();
 
     const newBook = {
-      id: uuidv4(), // make sure it's unique
-      title,
-      category,
+      item_id: uuidv4(), // make sure it's unique
+      title: [title, author],
+      category: { name: category, total: null, currentProgress: null },
     };
 
     // dispatch an action and pass it the newBook object (your action's payload)
@@ -23,7 +24,7 @@ const AddInput = () => {
     e.target.reset();
   };
   const {
-    form, formHeader, formInput, btn, titleInput,
+    form, formHeader, formInput, btn,
   } = styles;
   const listOfCategories = [
     'Fantasy',
@@ -34,7 +35,6 @@ const AddInput = () => {
     'Detective & Mystery',
     'Horror',
     'Thriller',
-    'Fiction',
     'Fiction',
     'Memoir & Autobiography',
     'Biography',
@@ -60,14 +60,25 @@ const AddInput = () => {
       <hr style={{ borderColor: 'rgb(0 0 0 / 0.1)' }} />
       <h2 className={formHeader}>ADD NEW BOOK</h2>
       <form className={form} onSubmit={submitBookToStore} action="">
-        <label style={{ flex: 2 }} htmlFor="title">
+        <label style={{ flex: 1 }} htmlFor="title">
           <input
             onChange={(e) => setTitle(e.target.value)}
             id="title"
             type="text"
             placeholder="Book title"
             value={title}
-            className={`${formInput} ${titleInput}`}
+            className={`${formInput}`}
+            required
+          />
+        </label>
+        <label style={{ flex: 1 }} htmlFor="author">
+          <input
+            onChange={(e) => setAuthor(e.target.value)}
+            id="author"
+            type="text"
+            placeholder="Author"
+            value={author}
+            className={`${formInput}`}
             required
           />
         </label>

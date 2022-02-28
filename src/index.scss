@@ -22,9 +22,7 @@ $grid-breakpoints: (
     }
 
     // If the breakpoint doesn't exist in the map.
-  }
-
-  @else {
+  } @else {
     // Log a warning.
     @warn 'Invalid breakpoint: #{$breakpoint}.';
   }
@@ -38,17 +36,8 @@ $grid-breakpoints: (
 
 body {
   margin: 0;
-  font-family:
-    'Poppins',
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
+  font-family: 'Poppins', BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -75,8 +64,7 @@ body {
     color: #000;
   }
 
-  &:active,
-  &:focus {
+  &:active {
     box-shadow: none;
     border-color: transparent;
   }
