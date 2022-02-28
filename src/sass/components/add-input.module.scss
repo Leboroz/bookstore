@@ -1,0 +1,28 @@
+@use '../../index.scss' as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include breakpoint-up(lg) {
+    flex-direction: row;
+  }
+
+  &Header {
+    color: rgb(0 0 0 / 0.4);
+    font-weight: 700;
+    margin-block: 1rem;
+  }
+
+  &Input {
+    display: block;
+    padding: 0.8rem;
+    width: 100%;
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-color: rgb(0 0 0 / 0.2);
+    outline: none;
+    flex: 1;
+  }
+}

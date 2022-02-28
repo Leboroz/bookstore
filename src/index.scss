@@ -1,0 +1,80 @@
+$primary: #f76e11;
+
+// MEDIA BREAKPOINTS
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin breakpoint-up($breakpoint) {
+  // If the breakpoint exists in the map.
+  @if map-has-key($grid-breakpoints, $breakpoint) {
+    // Get the breakpoint value.
+    $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+
+    // Write the media query.
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(244, 245, 249);
+}
+
+.paddingX {
+  padding-inline: 5vw;
+}
+
+.btn {
+  background-color: $primary;
+  padding: 0.5rem 2rem;
+  color: #fff;
+  border: 2px solid $primary;
+  font-weight: 300;
+  border-radius: 5px;
+  box-shadow: 2px 5px 10px rgb(0 0 0 / 0.3);
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($primary, $alpha: 0.7);
+    border-color: rgba($primary, $alpha: 0.7);
+    color: #000;
+  }
+
+  &:active {
+    box-shadow: none;
+    border-color: transparent;
+  }
+}
+
+.link {
+  background-color: transparent;
+  color: $primary;
+  cursor: pointer;
+  border: 0;
+  font-size: 1rem;
+  font-weight: 100;
+}
